@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem para o Time</title>
+</head>
+<body>
+    <h2>Informe o nome do time:</h2>
+    <input type="text" id="time" placeholder="Nome do time" required>
+    <br><br>
+    <button onclick="verificarTime()">Verificar</button>
+    
+    <h3 id="mensagem"></h3>
+
+    <script>
+        function verificarTime() {
+            var time = document.getElementById("time").value.toLowerCase();
+            var mensagem = document.getElementById("mensagem");
+
+            if (time === "flamengo") {
+                mensagem.innerHTML = "Em dezembro de 81, botou os ingleses na roda";
+            } else {
+                mensagem.innerHTML = "Time informado: " + time;
+            }
+        }
+    </script>
+</body>
+</html>

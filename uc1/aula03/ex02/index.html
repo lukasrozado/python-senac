@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparar Valores</title>
+</head>
+<body>
+    <h2>Comparador de Valores</h2>
+    <label for="valor1">Valor 1:</label>
+    <input type="number" id="valor1" required>
+    <br><br>
+    <label for="valor2">Valor 2:</label>
+    <input type="number" id="valor2" required>
+    <br><br>
+    <button onclick="compararValores()">Comparar</button>
+    
+    <h3 id="resultadoComparacao"></h3>
+
+    <script>
+        function compararValores() {
+            var valor1 = parseFloat(document.getElementById("valor1").value);
+            var valor2 = parseFloat(document.getElementById("valor2").value);
+            
+            var resultado = document.getElementById("resultadoComparacao");
+
+            if (valor1 > valor2) {
+                resultado.innerHTML = "O maior valor é: " + valor1;
+            } else {
+                resultado.innerHTML = "O maior valor é: " + valor2;
+            }
+        }
+    </script>
+</body>
+</html>
