@@ -1,3 +1,1 @@
-#python
-
-Arquivos utilizados no curso da Transfero
+Curso da Transfero-Senac Aprendizados
