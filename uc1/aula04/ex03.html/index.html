@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identificar o Mês</title>
+</head>
+<body>
+  <h1>Identificar o Mês pelo Número</h1>
+  <input id="numeroMes" type="number" placeholder="Digite um número (1-12)">
+  <button onclick="mostrarMes()">Ver Mês</button>
+  <p id="resultado"></p>
+
+  <script>
+    function mostrarMes() {
+      const numero = parseInt(document.getElementById("numeroMes").value);
+      const meses = [
+        "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+        "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+      ];
+
+      const resultado = numero >= 1 && numero <= 12 ? meses[numero - 1] : "Número inválido!";
+      document.getElementById("resultado").innerText = `Mês: ${resultado}`;
+    }
+  </script>
+</body>
+</html>

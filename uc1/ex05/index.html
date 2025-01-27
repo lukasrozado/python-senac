@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categoria de Produto</title>
+</head>
+<body>
+  <h1>Identificar a Categoria de um Produto pelo Código</h1>
+  <input id="codigo" type="number" placeholder="Digite o código do produto (1-4)">
+  <button onclick="identificar()">Identificar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function identificar() {
+      const codigo = parseInt(document.getElementById("codigo").value);
+      let categoria;
+
+      switch (codigo) {
+        case 1:
+          categoria = "Alimento Perecível";
+          break;
+        case 2:
+          categoria = "Bebida";
+          break;
+        case 3:
+          categoria = "Limpeza";
+          break;
+        case 4:
+          categoria = "Higiene Pessoal";
+          break;
+        default:
+          categoria = "Código inválido!";
+      }
+
+      document.getElementById("resultado").innerText = `Categoria: ${categoria}`;
+    }
+  </script>
+</body>
+</html>
