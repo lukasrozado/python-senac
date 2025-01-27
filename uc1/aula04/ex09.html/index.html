@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificar Férias</title>
+</head>
+<body>
+  <h1>Verificar se uma pessoa pode tirar férias</h1>
+  <input id="anosServico" type="number" placeholder="Anos de serviço">
+  <input id="mesesCargo" type="number" placeholder="Meses no cargo atual">
+  <button onclick="verificar()">Verificar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function verificar() {
+      const anosServico = parseInt(document.getElementById("anosServico").value);
+      const mesesCargo = parseInt(document.getElementById("mesesCargo").value);
+      const resultado = (anosServico > 1 && mesesCargo >= 6) 
+        ? "Pode tirar férias" 
+        : "Não pode tirar férias";
+      document.getElementById("resultado").innerText = resultado;
+    }
+  </script>
+</body>
+</html>

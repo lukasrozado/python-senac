@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intervalo 10 a 20</title>
+</head>
+<body>
+  <h1>Verificar se um número está entre 10 e 20</h1>
+  <input id="numero" type="number" placeholder="Digite um número">
+  <button onclick="verificar()">Verificar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function verificar() {
+      const numero = parseInt(document.getElementById("numero").value);
+      const resultado = (numero >= 10 && numero <= 20) 
+        ? "Número dentro do intervalo" 
+        : "Número fora do intervalo";
+      document.getElementById("resultado").innerText = resultado;
+    }
+  </script>
+</body>
+</html>

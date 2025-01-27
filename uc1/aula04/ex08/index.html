@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprar Bebidas</title>
+</head>
+<body>
+  <h1>Verificar se uma pessoa pode comprar bebidas alcoólicas</h1>
+  <input id="idade" type="number" placeholder="Digite a idade">
+  <label>
+    <input id="acompanhado" type="checkbox"> Está acompanhado de responsável
+  </label>
+  <button onclick="verificar()">Verificar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function verificar() {
+      const idade = parseInt(document.getElementById("idade").value);
+      const acompanhado = document.getElementById("acompanhado").checked;
+      const resultado = (idade >= 18 || (idade >= 16 && acompanhado)) 
+        ? "Pode comprar bebidas" 
+        : "Não pode comprar bebidas";
+      document.getElementById("resultado").innerText = resultado;
+    }
+  </script>
+</body>
+</html>

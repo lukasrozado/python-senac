@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dirigir ou Votar</title>
+</head>
+<body>
+  <h1>Verificar se uma pessoa pode dirigir ou votar</h1>
+  <input id="idade" type="number" placeholder="Digite a idade">
+  <button onclick="verificar()">Verificar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function verificar() {
+      const idade = parseInt(document.getElementById("idade").value);
+      let resultado = "";
+
+      if (idade >= 18) {
+        resultado += "Pode dirigir e o voto é obrigatório.";
+      } else if (idade >= 16) {
+        resultado += "Voto é opcional.";
+      } else {
+        resultado += "Não pode dirigir nem votar.";
+      }
+
+      document.getElementById("resultado").innerText = resultado;
+    }
+  </script>
+</body>
+</html>
