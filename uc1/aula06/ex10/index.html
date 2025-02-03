@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 10</title>
+</head>
+<body>
+    <h2>Exercício 10 - Nome e Cidade</h2>
+    <div id="result"></div>
+
+    <script>
+        let pessoas = [];
+        
+        for (let i = 0; i < 10; i++) {
+            let nome = prompt('Digite seu nome:');
+            let cidade = prompt('Digite sua cidade:');
+            pessoas.push({ nome, cidade });
+        }
+        
+        let result = '';
+        pessoas.forEach(pessoa => {
+            result += `${pessoa.nome} - ${pessoa.cidade}<br>`;
+        });
+        
+        document.getElementById('result').innerHTML = result;
+    </script>
+</body>
+</html>

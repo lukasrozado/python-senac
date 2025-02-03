@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 7</title>
+</head>
+<body>
+    <h2>Exercício 7 - Números pares de 2 a 20</h2>
+    <div id="result"></div>
+
+    <script>
+        let i = 2;
+        let result = '';
+        do {
+            result += i + '<br>';
+            i += 2;
+        } while (i <= 20);
+        
+        document.getElementById('result').innerHTML = result;
+    </script>
+</body>
+</html>

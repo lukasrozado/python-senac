@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <h2>Exercício 4 - Soma dos números</h2>
+    <div id="result"></div>
+
+    <script>
+        let sum = 0;
+        for (let i = 0; i < 5; i++) {
+            let number = parseInt(prompt('Digite um número:'));
+            sum += number;
+        }
+        document.getElementById('result').innerHTML = 'A soma total é: ' + sum;
+    </script>
+</body>
+</html>

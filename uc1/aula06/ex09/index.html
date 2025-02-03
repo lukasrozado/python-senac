@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 9</title>
+</head>
+<body>
+    <h2>Exercício 9 - Funcionários</h2>
+    <div id="result"></div>
+
+    <script>
+        let totalSalarioMulheres = 0;
+        let totalSalarioHomens = 0;
+        let qtdMulheres = 0;
+        let qtdHomens = 0;
+        let somaSalarios = 0;
+        let count = 0;
+
+        while (true) {
+            let sexo = prompt('Digite o sexo (M/F) ou "fim" para encerrar:');
+            if (sexo.toLowerCase() === 'fim') break;
+            
+            let salario = parseFloat(prompt('Digite o salário:'));
+            
+            if (sexo.toLowerCase() === 'f') {
+                qtdMulheres++;
+                totalSalarioMulheres += salario;
+            } else if (sexo.toLowerCase() === 'm') {
+                qtdHomens++;
+                totalSalarioHomens += salario;
+            }
+            
+            somaSalarios += salario;
+            count++;
+        }
+        
+        let mediaSalarial = somaSalarios / count;
+        
+        let result = `
+            Quantidade de mulheres: ${qtdMulheres}<br>
+            Quantidade de homens: ${qtdHomens}<br>
+            Soma dos salários das mulheres: ${totalSalarioMulheres}<br>
+            Soma dos salários dos homens: ${totalSalarioHomens}<br>
+            Média salarial da empresa: ${mediaSalarial.toFixed(2)}
+        `;
+        
+        document.getElementById('result').innerHTML = result;
+    </script>
+</body>
+</html>

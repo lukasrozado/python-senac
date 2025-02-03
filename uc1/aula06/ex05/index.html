@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 5</title>
+</head>
+<body>
+    <h2>Exercício 5 - Exibir nome várias vezes</h2>
+    <div id="result"></div>
+
+    <script>
+        let name = prompt('Qual seu nome?');
+        let times = parseInt(prompt('Quantas vezes deseja ver seu nome?'));
+        let result = '';
+        let count = 0;
+        
+        while(count < times) {
+            result += name + '<br>';
+            count++;
+        }
+        
+        document.getElementById('result').innerHTML = result;
+    </script>
+</body>
+</html>

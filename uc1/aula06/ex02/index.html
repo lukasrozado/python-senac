@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <h2>Exercício 2 - Números ímpares de 1 a 15</h2>
+    <div id="result"></div>
+
+    <script>
+        let result = '';
+        for (let i = 1; i <= 15; i++) {
+            if (i % 2 !== 0) {
+                result += i + '<br>';
+            }
+        }
+        document.getElementById('result').innerHTML = result;
+    </script>
+</body>
+</html>

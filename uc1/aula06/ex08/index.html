@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 8</title>
+</head>
+<body>
+    <h2>Exercício 8 - Times de futebol</h2>
+    <div id="result"></div>
+
+    <script>
+        let times = { Flamengo: 0, Vasco: 0, Fluminense: 0, Botafogo: 0, Outro: 0 };
+        
+        for (let i = 0; i < 10; i++) {
+            let time = prompt('Qual o nome do seu time? (Flamengo, Vasco, Fluminense, Botafogo ou outro)');
+            time = time.trim().toLowerCase();
+            
+            if (time === 'flamengo') times.Flamengo++;
+            else if (time === 'vasco') times.Vasco++;
+            else if (time === 'fluminense') times.Fluminense++;
+            else if (time === 'botafogo') times.Botafogo++;
+            else times.Outro++;
+        }
+
+        let result = `
+            Flamengo: ${times.Flamengo}<br>
+            Vasco: ${times.Vasco}<br>
+            Fluminense: ${times.Fluminense}<br>
+            Botafogo: ${times.Botafogo}<br>
+            Outro: ${times.Outro}
+        `;
+        
+        document.getElementById('result').innerHTML = result;
+    </script>
+</body>
+</html>
