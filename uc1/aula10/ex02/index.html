@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Batalha Naval</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(5, 50px);
+            grid-template-rows: repeat(5, 50px);
+            gap: 5px;
+        }
+        .cell {
+            width: 50px;
+            height: 50px;
+            background-color: #add8e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .cell.hit {
+            background-color: #ff6347;
+        }
+        .cell.miss {
+            background-color: #90ee90;
+        }
+        input {
+            margin-top: 20px;
+            padding: 5px;
+            width: 50px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jogo da Batalha Naval</h1>
+
+    <div class="grid" id="grid"></div>
+
+    <input type="number" id="linha" placeholder="Linha (0-4)" min="0" max="4">
+    <input type="number" id="coluna" placeholder="Coluna (0-4)" min="0" max="4">
+    <button onclick="atirar()">Atirar</button>
+
+    <div class="message" id="message"></div>
+
+    <script>
+        let navioLinha = 2; 
+        let navioColuna = 3; 
+        let acertou = false;
+
+        function criarTabuleiro() {
+            const gridElement = document.getElementById('grid');
+            gridElement.innerHTML = '';
+
+            for (let i = 0; i < 25; i++) {
+                const cell = document.createElement('div');
+                cell.classList.add('cell');
+                gridElement.appendChild(cell);
+            }
+        }
+
+        function atirar() {
+            const linha = parseInt(document.getElementById('linha').value);
+            const coluna = parseInt(document.getElementById('coluna').value);
+            const messageElement = document.getElementById('message');
+
+            if (linha < 0 || linha > 4 || coluna < 0 || coluna > 4 || isNaN(linha) || isNaN(coluna)) {
+                messageElement.innerText = 'Por favor, insira coordenadas válidas (0-4).';
+                return;
+            }
+
+            const cells = document.querySelectorAll('.cell');
+            const index = linha * 5 + coluna;
+            const cell = cells[index];
+
+            if (acertou) {
+                messageElement.innerText = 'Você já ganhou! Reinicie o jogo.';
+                return;
+            }
+
+            if (linha === navioLinha && coluna === navioColuna) {
+                cell.classList.add('hit');
+                messageElement.innerText = 'Você acertou o navio! Parabéns!';
+                acertou = true;
+            } else {
+                cell.classList.add('miss');
+                messageElement.innerText = 'Errou! Tente novamente.';
+            }
+        }
+
+        criarTabuleiro();
+    </script>
+</body>
+</html>
